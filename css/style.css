@@ -1,0 +1,130 @@
+/***** global *****/
+*{
+    font-family: 'Roboto', sans-serif;
+}
+/***** End global *****/
+a {
+  color: inherit !important;
+}
+/***** navbar *****/
+nav {
+  background-color: #1e202b;
+  color: #fff;
+}
+.icon{
+    color: #fff;
+}
+.navbar-toggler:focus{
+    box-shadow: 0 0 0.5px 1px #4ca2f9 !important;
+}
+.navbar-toggler:hover{
+    box-shadow: 0 0  10px #4ca2f9;
+}
+.logo-title{
+    display: inline-block;
+    vertical-align: middle;
+}
+nav a h1{
+    font-size: 18.24px;
+}
+nav span{
+    font-size: 10px;
+    color: #a3a0a0;
+    display: block;
+}
+nav a img{
+    width:30%;
+    margin-right: 10px;
+}
+nav .nav-item {
+  padding-inline: 5px;
+  font-size: 15px;
+}
+nav .nav-item a {
+  padding: 2px 25px !important;
+  border-radius: 45px;
+  display: inline-block;
+  margin-block: 5px;
+}
+nav .nav-item .active {
+  color: #4ca2f9 !important;
+  box-shadow: 0 0 0 1.5px #4ca2f9;
+}
+nav .nav-item :hover{
+    color: #4ca2f9 !important;
+    box-shadow: 0 0 0 1.5px #4ca2f9;
+    transition: 0.3s;
+
+}
+/***** End navbar *****/
+
+/***** search *****/
+.bg-img{
+    background-image: url('../images/banner.png');
+    padding: 70px 0;
+     background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+.search-input{
+    background-color: #282a3a;
+    color: #fff;
+    border: 0;
+    
+}
+.search-input::placeholder{
+    color: #858181;
+}
+.search-input:focus{
+    box-shadow: 0 0 0 1.5px #4ca2f9;
+    border: 0;
+}
+/***** End search *****/
+/***** cards *****/
+.temp-num{
+    font-size: 75px;
+}
+.item-footer{
+    border-bottom-left-radius: 10px;
+}
+.bg-header-color{
+background-color: #3b3e4b;
+
+}
+.item-today{
+    border-top-left-radius: 10px;
+}
+.item-third-day{
+    border-top-right-radius: 10px;
+}
+.bg-card-day{
+    background-color: #323544;
+}
+.text-light-blue{
+    color: #4ca2f9;
+}
+.footer-icons
+{
+    width: 20px;
+    height: 20px;
+}
+.bg-sec-card{
+    background-color: #262936;
+}
+.bg-tomorrow{
+    background-color: rgb(33, 35, 50)
+}
+.text-muted{
+    color: #9a9999 !important;
+}
+.fs-6
+{
+    font-size: 14px !important;
+}
+
+/***** End cards *****/
+
+footer{
+    background-color: #1e202b;
+    color: #fff;
+  }

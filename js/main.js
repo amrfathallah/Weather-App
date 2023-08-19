@@ -73,5 +73,5 @@ function displayNextdayData(data){
 start()
 
 searchInput.addEventListener("input",function(){
-  startApp(searchInput.value)
+  start(searchInput.value)
 })

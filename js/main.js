@@ -15,8 +15,7 @@ const nextMinTemp = document.getElementsByClassName("next_min_temp");
 const nextImg = document.getElementsByClassName("next_day_img");
 const nextText = document.getElementsByClassName("next_day_text");
 
-let searchInput = document.getElementById("search")
-
+let searchInput = document.getElementById("search");
 
 // fetch API data
 async function getData(cityName) {
@@ -29,49 +28,51 @@ async function getData(cityName) {
 }
 
 // today data
-function displayTodayData(data){
-    let todayDate = new Date();
-    todayName.innerHTML = todayDate.toLocaleDateString("en-US" , {weekday:"long"})
-    todayNumber.innerHTML = todayDate.getDate()
-    todayMonth.innerHTML = todayDate.toLocaleDateString("en-US" , {month:"long"})
-    todayLocation.innerHTML = data.location.name
-    todayTemp.innerHTML = data.current.temp_c
-    todayImg.setAttribute("src" , data.current.condition.icon) 
-    todayText.innerHTML = data.current.condition.text
-    humidity.innerHTML = data.current.humidity + "%"
-    wind.innerHTML = data.current.wind_kph +"km/h"
-    windDirection.innerHTML = data.current.wind_dir
-
+function displayTodayData(data) {
+  let todayDate = new Date();
+  todayName.innerHTML = todayDate.toLocaleDateString("en-US", {
+    weekday: "long",
+  });
+  todayNumber.innerHTML = todayDate.getDate();
+  todayMonth.innerHTML = todayDate.toLocaleDateString("en-US", {
+    month: "long",
+  });
+  todayLocation.innerHTML = data.location.name;
+  todayTemp.innerHTML = data.current.temp_c;
+  todayImg.setAttribute("src", data.current.condition.icon);
+  todayText.innerHTML = data.current.condition.text;
+  humidity.innerHTML = data.current.humidity + "%";
+  wind.innerHTML = data.current.wind_kph + "km/h";
+  windDirection.innerHTML = data.current.wind_dir;
 }
 
 // next day data
-function displayNextdayData(data){
-  let forecastData = data.forecast.forecastday
+function displayNextdayData(data) {
+  let forecastData = data.forecast.forecastday;
   for (let i = 0; i < 2; i++) {
-    let nextDate = new Date(forecastData[i+1].date)
-    nextDay[i].innerHTML = nextDate.toLocaleDateString("en-US", {weekday:"long"})
-    nextMaxTemp[i].innerHTML = forecastData[i+1].day.maxtemp_c
-    nextMinTemp[i].innerHTML = forecastData[i+1].day.mintemp_c
-    nextText[i].innerHTML = forecastData[i+1].day.condition.text
-    nextImg[i].setAttribute("src",forecastData[i+1].day.condition.icon)
+    let nextDate = new Date(forecastData[i + 1].date);
+    nextDay[i].innerHTML = nextDate.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+    nextMaxTemp[i].innerHTML = forecastData[i + 1].day.maxtemp_c;
+    nextMinTemp[i].innerHTML = forecastData[i + 1].day.mintemp_c;
+    nextText[i].innerHTML = forecastData[i + 1].day.condition.text;
+    nextImg[i].setAttribute("src", forecastData[i + 1].day.condition.icon);
   }
 }
 
-// start app 
+// start app
 
- async function start(city="cairo")
-{
-    let weatherData =  await getData(city)
-  if(!weatherData.error){
-
-    displayTodayData(weatherData)
-    displayNextdayData(weatherData)
+async function start(city = "cairo") {
+  let weatherData = await getData(city);
+  if (!weatherData.error) {
+    displayTodayData(weatherData);
+    displayNextdayData(weatherData);
   }
-    
 }
 
-start()
+start();
 
-searchInput.addEventListener("input",function(){
-  start(searchInput.value)
-})
+searchInput.addEventListener("input", function () {
+  start(searchInput.value);
+});
